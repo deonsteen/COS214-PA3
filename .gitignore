@@ -1,0 +1,9 @@
+docs/
+
+*.o
+*.obj
+*.out
+*.exe
+build/
+bin/
+obj/
