@@ -19,18 +19,30 @@ void ShuttleStop::reportStatus() const {
                 << ", capacity " << capacity_ << "\n";
 }
 
-void ShuttleStop::update(const Notice& notice) {
+ void ShuttleStop::update(const Notice& notice) {   //changed update to accomidate 5 event rules
     switch (notice.type) {
         case NoticeType::WEATHER_ALERT:
             currentRoute_ = "Indoor Shelter Route";
-            std::cout << "[ShuttleStop] " << name_ << " changes route to " << currentRoute_
-                        << " (" << notice.description << ")\n";
+            std::cout << "[ShuttleStop] " << name_
+                      << " changes route to " << currentRoute_
+                      << " (" << notice.description << ")\n";
             break;
+
+        case NoticeType::EVACUATE:
+            currentRoute_ = "Emergency Evacuation Route";
+            std::cout << "[ShuttleStop] " << name_
+                      << " switches to " << currentRoute_
+                      << " (" << notice.description << ")\n";
+            break;
+
         case NoticeType::RESUME:
             currentRoute_ = "Standard Route";
-            std::cout << "[ShuttleStop] " << name_ << " reverts to " << currentRoute_ << ".\n";
+            std::cout << "[ShuttleStop] " << name_
+                      << " reverts to " << currentRoute_ << ".\n";
             break;
+
         default:
-            break; // ShuttleStop has no reaction to other notice types.
+            break;
     }
 }
+

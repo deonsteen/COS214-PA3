@@ -48,4 +48,4 @@ protected:
     std::vector<Observer*> observers_; ///< Non-owning pointers.
 };
 
-#endif
+#endif 

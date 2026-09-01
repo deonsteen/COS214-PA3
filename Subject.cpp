@@ -24,7 +24,7 @@ void Subject::detach(Observer* observer)
     {
         observers_.erase(it);
     }
-    //not found - safe, no op, np error
+    //not found - safe, no op, np error 
 }
 
 
