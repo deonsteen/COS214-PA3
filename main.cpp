@@ -182,7 +182,7 @@ int main()
               << capacityThreshold
               << "\n";
 
-    if (EventRules::meetsCapacityThreshold(
+    if (EventRules::isOverCapacityThreshold(
             *mainStageZonePtr,
             capacityThreshold))
     {

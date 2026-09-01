@@ -28,7 +28,7 @@ bool transferUnit(
     return true;
 }
 
-bool meetsCapacityThreshold(const EventGroup& zone, int threshold)
+bool isOverCapacityThreshold(const EventGroup& zone, int threshold)
 {
     return zone.getCapacity() >= threshold;
 }

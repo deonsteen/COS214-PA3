@@ -54,7 +54,7 @@ bool transferUnit(
  * @param threshold The capacity threshold to compare against.
  * @return true if zone.getCapacity() >= threshold.
  */
-bool meetsCapacityThreshold(
+bool isOverCapacityThreshold(
     const EventGroup& zone,
     int threshold
 );
